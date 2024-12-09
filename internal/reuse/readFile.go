@@ -1,4 +1,4 @@
-package main
+package reuse
 
 import (
 	"bufio"
@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func readFile(filePath string) []string {
+func ReadFile(filePath string) []string {
 	var fileContentSlice []string
 	file, err := os.Open(filePath)
 	if err != nil {
