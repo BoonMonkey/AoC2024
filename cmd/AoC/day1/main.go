@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	filePath := "list.txt"
+	filePath := "data/day1.txt"
 
 	fileContent := readFile(filePath)
 	listA, listB := splitSlices(fileContent)
