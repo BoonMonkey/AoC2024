@@ -1,11 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"aoc/internal/reuse"
+	"fmt"
+)
 
 func main() {
 	filePath := "data/day1.txt"
 
-	fileContent := readFile(filePath)
+	fileContent := reuse.ReadFile(filePath)
 	listA, listB := splitSlices(fileContent)
 	totalDistance := calculateDistance(listA, listB)
 	totalScore := calculateScore(listA, listB)
