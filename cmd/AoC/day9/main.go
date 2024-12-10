@@ -3,6 +3,7 @@ package main
 import (
 	"aoc/internal/reuse"
 	"log"
+	"strings"
 )
 
 func main() {
@@ -10,11 +11,12 @@ func main() {
 	fileContent := reuse.ReadFile(filePath)
 
 	formattedString := formatString(fileContent)
-	log.Print(formattedString)
-	// splitString := strings.Split(formattedString, "")
-	// log.Print(splitString)
-	// structuredElements := structuredElementsRework(splitString)
+	splitString := strings.Split(formattedString, "_split")
+	if splitString[len(splitString)-1] == "" {
+		splitString = splitString[:len(splitString)-1]
+	}
+	structuredElements := structuredElementsRework(splitString)
 
-	// calculatedCheckSum := calculateCheckSum(structuredElements)
-	// log.Print(calculatedCheckSum)
+	calculatedCheckSum := calculateCheckSum(structuredElements)
+	log.Print(calculatedCheckSum)
 }

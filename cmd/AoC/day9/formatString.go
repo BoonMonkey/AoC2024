@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"strconv"
 	"strings"
@@ -21,7 +20,7 @@ func formatString(fileContent []string) string {
 			if err != nil {
 				log.Fatal(err)
 			}
-			characterToAdd := strings.Repeat(characterToPrint, timesToPrint)
+			characterToAdd := strings.Repeat(characterToPrint+"_split", timesToPrint) // SUUUUUPER JANK but fixes my bug
 			translatedCharacters = append(translatedCharacters, characterToAdd)
 			evenCount++
 		} else {
@@ -31,12 +30,12 @@ func formatString(fileContent []string) string {
 			if err != nil {
 				log.Fatal(err)
 			}
-			characterToAdd := strings.Repeat(characterToPrint, timesToPrint)
+			characterToAdd := strings.Repeat(characterToPrint+"_split", timesToPrint) // SUUUUUPER JANK but fixes my bug
 			translatedCharacters = append(translatedCharacters, characterToAdd)
 			oddCount++
 		}
 	}
 
-	joinedCharacters := strings.Join(translatedCharacters, fmt.Sprintf("value_%d", i))
+	joinedCharacters := strings.Join(translatedCharacters, "")
 	return joinedCharacters
 }
