@@ -11,10 +11,10 @@ func main() {
 	fileContent := reuse.ReadFile(filePath)
 
 	formattedString := formatString(fileContent)
-	splitString := strings.Split(formattedString, "_split")
-	if splitString[len(splitString)-1] == "" {
-		splitString = splitString[:len(splitString)-1]
-	}
+	splitString := strings.Split(formattedString, "_split") // J
+	if splitString[len(splitString)-1] == "" {              // A
+		splitString = splitString[:len(splitString)-1] // N
+	} // K
 	structuredElements := structuredElementsRework(splitString)
 
 	calculatedCheckSum := calculateCheckSum(structuredElements)
